@@ -1,6 +1,5 @@
-
 import { Code, BookOpen, Database, Brain } from 'lucide-react';
-import { Slider } from './ui/slider';
+import TechnicalSkills from './TechnicalSkills';
 
 const About = () => {
   const educationDetails = [
@@ -15,49 +14,6 @@ const About = () => {
       institution: "Previous University",
       year: "2018 - 2021",
       description: "Graduated with distinction, focused on programming fundamentals"
-    }
-  ];
-
-  const skills = [
-    {
-      name: "React",
-      proficiency: 90,
-      category: "Frontend"
-    },
-    {
-      name: "TypeScript",
-      proficiency: 85,
-      category: "Frontend"
-    },
-    {
-      name: "Next.js",
-      proficiency: 80,
-      category: "Frontend"
-    },
-    {
-      name: "Node.js",
-      proficiency: 75,
-      category: "Backend"
-    },
-    {
-      name: "MongoDB",
-      proficiency: 70,
-      category: "Backend"
-    },
-    {
-      name: "Python/Django",
-      proficiency: 65,
-      category: "Backend"
-    },
-    {
-      name: "UI/UX Design",
-      proficiency: 75,
-      category: "Design"
-    },
-    {
-      name: "AWS",
-      proficiency: 60,
-      category: "DevOps"
     }
   ];
 
@@ -95,7 +51,7 @@ const About = () => {
         
         {/* Two-column layout for bio and image */}
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 mb-16">
-          {/* Bio Column - takes 3/5 of the width on large screens */}
+          {/* Bio Column */}
           <div className="lg:col-span-3 flex flex-col justify-center">
             <div className="glass-card rounded-xl p-8 h-full animate-fade-in">
               <h3 className="text-2xl font-bold mb-6 text-gradient">My Journey</h3>
@@ -119,7 +75,7 @@ const About = () => {
             </div>
           </div>
           
-          {/* Education Column - takes 2/5 of the width on large screens */}
+          {/* Education Column */}
           <div className="lg:col-span-2">
             <div className="glass-card rounded-xl p-8 h-full animate-fade-in [animation-delay:200ms]">
               <h3 className="text-2xl font-bold mb-6 text-gradient">Education</h3>
@@ -161,38 +117,10 @@ const About = () => {
           </div>
         </div>
         
-        {/* Skills with Sliding Bars */}
-        <div>
+        {/* New Technical Skills Section */}
+        <div className="mb-10">
           <h3 className="text-2xl font-semibold mb-8 text-center">Technical Proficiency</h3>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 max-w-4xl mx-auto">
-            {skills.map((skill, index) => (
-              <div 
-                key={index} 
-                className="animate-fade-in glass-card p-6 rounded-xl hover:shadow-lg transition-all"
-                style={{ animationDelay: `${index * 100}ms` }}
-              >
-                <div className="flex justify-between mb-3">
-                  <span className="font-bold text-lg">{skill.name}</span>
-                  <span className="text-accent font-bold">{skill.proficiency}%</span>
-                </div>
-                <div className="relative">
-                  <Slider
-                    value={[skill.proficiency]}
-                    max={100}
-                    step={1}
-                    disabled
-                    className="cursor-default h-3"
-                  />
-                  <span 
-                    className="absolute -right-1 -top-1 h-5 w-5 bg-accent rounded-full shadow-lg border-2 border-background"
-                    style={{ right: `${100 - skill.proficiency}%` }}
-                  />
-                </div>
-                <div className="mt-2 text-right text-xs text-muted-foreground">{skill.category}</div>
-              </div>
-            ))}
-          </div>
+          <TechnicalSkills />
         </div>
       </div>
     </section>
