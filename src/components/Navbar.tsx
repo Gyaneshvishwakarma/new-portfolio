@@ -2,11 +2,13 @@
 import { useState, useEffect } from 'react';
 import ThemeToggle from './ThemeToggle';
 import { Menu, X } from 'lucide-react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,11 +20,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: isHome ? '#home' : '/' },
+    { name: 'Projects', href: isHome ? '#projects' : '/#projects' },
+    { name: 'Blog', href: isHome ? '#blog' : '/blog' },
+    { name: 'About', href: isHome ? '#about' : '/#about' },
+    { name: 'Contact', href: isHome ? '#contact' : '/#contact' }
   ];
 
   return (
@@ -44,13 +46,23 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              className="hover:text-primary transition-colors duration-300"
-            >
-              {link.name}
-            </a>
+            link.href.startsWith('#') ? (
+              <a
+                key={link.name}
+                href={link.href}
+                className="hover:text-primary transition-colors duration-300"
+              >
+                {link.name}
+              </a>
+            ) : (
+              <RouterLink
+                key={link.name}
+                to={link.href}
+                className="hover:text-primary transition-colors duration-300"
+              >
+                {link.name}
+              </RouterLink>
+            )
           ))}
           <ThemeToggle />
         </div>
@@ -59,14 +71,25 @@ const Navbar = () => {
         {isOpen && (
           <div className="absolute top-full left-0 w-full glass mt-1 py-5 px-4 flex flex-col gap-4 md:hidden animate-fade-in">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="hover:text-primary transition-colors duration-300"
-              >
-                {link.name}
-              </a>
+              link.href.startsWith('#') ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="hover:text-primary transition-colors duration-300"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <RouterLink
+                  key={link.name}
+                  to={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="hover:text-primary transition-colors duration-300"
+                >
+                  {link.name}
+                </RouterLink>
+              )
             ))}
             <div className="mt-4">
               <ThemeToggle />

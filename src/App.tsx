@@ -4,7 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Index from "./pages/Index";
 import BlogPage from "./pages/BlogPage";
 import BlogPost from "./pages/BlogPost";
@@ -13,6 +13,8 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
+  const [themeLoaded, setThemeLoaded] = useState(false);
+
   // Check for saved theme preference or use system preference
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -22,7 +24,12 @@ const App = () => {
     } else {
       document.documentElement.classList.remove('dark');
     }
+    setThemeLoaded(true);
   }, []);
+
+  if (!themeLoaded) {
+    return null; // Prevent flash of wrong theme
+  }
 
   return (
     <QueryClientProvider client={queryClient}>

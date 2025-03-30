@@ -156,7 +156,7 @@ export default {
 				'blob': 'blob 7s infinite ease-in-out'
 			},
 			fontFamily: {
-				sans: ['Inter', 'sans-serif']
+				sans: ['Play', 'Inter', 'sans-serif']
 			}
 		}
 	},

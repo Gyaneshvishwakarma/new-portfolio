@@ -1,17 +1,19 @@
 
 import { Heart } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const isHome = location.pathname === '/';
   
   const navLinks = [
-    { name: 'Home', href: '#home' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Blog', href: '#blog' },
-    { name: 'About', href: '#about' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'Home', href: isHome ? '#home' : '/' },
+    { name: 'Projects', href: isHome ? '#projects' : '/#projects' },
+    { name: 'Blog', href: isHome ? '#blog' : '/blog' },
+    { name: 'About', href: isHome ? '#about' : '/#about' },
+    { name: 'Contact', href: isHome ? '#contact' : '/#contact' }
   ];
   
   return (
@@ -22,13 +24,23 @@ const Footer = () => {
           
           <div className="flex flex-wrap justify-center gap-6">
             {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="hover:text-primary transition-colors duration-300"
-              >
-                {link.name}
-              </a>
+              link.href.startsWith('#') ? (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="hover:text-primary transition-colors duration-300"
+                >
+                  {link.name}
+                </a>
+              ) : (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  className="hover:text-primary transition-colors duration-300"
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
           </div>
           
