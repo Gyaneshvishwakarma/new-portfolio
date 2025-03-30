@@ -15,39 +15,33 @@ type Project = {
 const projects: Project[] = [
   {
     id: 1,
-    title: "E-Learning Platform",
-    description: "A comprehensive learning management system built with React and Node.js, featuring video courses, quizzes, and progress tracking.",
-    image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=500&auto=format&fit=crop",
-    tags: ["React", "Node.js", "MongoDB", "Redux"],
-    github: "https://github.com",
-    liveDemo: "https://example.com"
+    title: "The Yogesh Vishwakarma Landing Website",
+    description: "A ReactJS and Tailwind CSS landing page designed for a YouTuber, highlighting their services, portfolio, and essential details.",
+    image: "/assests/project1.png",
+    tags: ["ReactJS", "Shadcn", "Tailwind CSS", "Accernity"],
+    github: "https://github.com/Gyaneshvishwakarma/The-Yogesh-Vishwakarma-Website-Project",
+    liveDemo: "https://the-yogesh-vishwakarma.vercel.app/"
   },
   {
     id: 2,
-    title: "Hospital Management System",
-    description: "A full-stack application for efficient hospital administration, including patient records, appointment scheduling, and billing.",
-    image: "https://images.unsplash.com/photo-1582719471384-894fbb16e074?q=80&w=500&auto=format&fit=crop",
-    tags: ["Python", "Django", "PostgreSQL", "Bootstrap"],
-    github: "https://github.com"
+    title: "Beauty Parlour Website",
+    description: "A user-friendly WordPress website crafted for a freelance beauty parlour. It showcases services, booking options, and client testimonials.",
+    image: "/assests/project2.png",
+    tags: ["WordPress"],
+    github: "https://github.com/Gyaneshvishwakarma",
+    liveDemo: "https://divyzone.in/"
   },
   {
     id: 3,
-    title: "AI Image Generator",
-    description: "A machine learning project that uses GANs to generate unique artwork based on text prompts.",
-    image: "https://images.unsplash.com/photo-1558244661-d248897f7bc4?q=80&w=500&auto=format&fit=crop",
-    tags: ["Python", "TensorFlow", "React", "Flask"],
-    liveDemo: "https://example.com"
-  },
-  {
-    id: 4,
-    title: "Inventory Management System",
-    description: "A robust system for tracking inventory levels, orders, sales, and deliveries for small businesses.",
-    image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=500&auto=format&fit=crop",
-    tags: ["Java", "Spring Boot", "MySQL", "Thymeleaf"],
-    github: "https://github.com",
-    liveDemo: "https://example.com"
-  },
+    title: "Personal Portfolio",
+    description: "Personal portfolio showcasing my web development skills, projects, and achievements. Built with Next.js, Tailwind CSS, and interactive libraries for engagement.",
+    image: "/assests/project3.png",
+    tags: ["NextJS", "TailwindCSS", "Framer Motion", "Shadcn"],
+    github: "https://github.com/Gyaneshvishwakarma/Gyanesh-Portfolio",
+    liveDemo: "/"
+  }
 ];
+
 
 const ProjectCard = ({ project }: { project: Project }) => {
   return (

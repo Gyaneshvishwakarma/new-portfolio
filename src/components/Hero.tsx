@@ -38,7 +38,7 @@ const Hero = () => {
             <div className="relative w-64 h-64 md:w-96 md:h-96">
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent to-primary opacity-20 blur-lg"></div>
               <img 
-                src="https://images.unsplash.com/photo-1608889175638-9322300c173b?q=80&w=1080&auto=format&fit=crop"
+                src="/img3.jpg"
                 alt="Anime style character" 
                 className="object-cover w-full h-full rounded-2xl shadow-2xl glass-card p-1"
               />

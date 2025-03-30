@@ -1,69 +1,50 @@
-# Welcome to your Lovable project
+# 📌 Gyanesh's Portfolio Website
 
-## Project info
+Welcome to my personal portfolio website! This website showcases my skills, projects, and experiences as a web developer and IoT enthusiast.
 
-**URL**: https://lovable.dev/projects/b78e1566-f1a4-41f6-bd24-3305c7ae4929
+## 🌟 Live Demo
+[Visit My Portfolio](#) *(Update with your live website link)*
 
-## How can I edit this code?
-
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/b78e1566-f1a4-41f6-bd24-3305c7ae4929) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## 📂 Project Structure
+```
+/gyanesh-new-portfolio
+│── index.html      # Main HTML file
+│── style.css       # Styling file
+│── script.js       # JavaScript file
+│── assets/         # Images, icons, and other assets
+│── projects/       # Project details
+│── README.md       # Documentation
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Features
+✅ Fully Responsive Design  
+✅ Interactive UI with Smooth Animations  
+✅ Showcases Web Development & IoT Projects  
+✅ Contact Form for Business Inquiries  
+✅ Deployed on **Vercel/GitHub Pages** *(mention your hosting platform)*  
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🛠️ Technologies Used
+- **Frontend:** HTML, CSS, JavaScript
+- **Frameworks/Libraries:** Bootstrap/Tailwind *(if used)*
+- **Deployment:** Vercel/GitHub Pages
+- **Other:** FontAwesome, AOS Animations *(if used)*
 
-**Use GitHub Codespaces**
+## 📷 Screenshots
+*(Add some screenshots of your portfolio UI here)*
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 📌 Setup & Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/yourusername/gyanesh-new-portfolio.git
+   ```
+2. Open `index.html` in a browser or use Live Server in VS Code.
+3. Customize content in `index.html`, styles in `style.css`, and scripts in `script.js`.
 
-## What technologies are used for this project?
+## 📝 Contact Me
+📧 Email: your.email@example.com  
+🔗 LinkedIn: [Your LinkedIn Profile](#)  
+🐦 Twitter: [@yourhandle](#)  
 
-This project is built with .
+---
+💡 *Feel free to contribute, open issues, or suggest improvements!*
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b78e1566-f1a4-41f6-bd24-3305c7ae4929) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)

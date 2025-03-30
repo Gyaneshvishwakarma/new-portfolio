@@ -30,7 +30,7 @@ const Navbar = () => {
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass py-3' : 'bg-transparent py-5'}`}>
       <nav className="container mx-auto flex justify-between items-center px-4">
-        <RouterLink to="/" className="font-bold text-2xl text-gradient">Portfolio</RouterLink>
+        <RouterLink to="/" className="font-bold text-2xl text-gradient">Gyanesh</RouterLink>
         
         {/* Mobile Menu Button */}
         <div className="md:hidden">

@@ -5,18 +5,18 @@ const About = () => {
   const educationDetails = [
     {
       degree: "Master of Computer Applications (MCA)",
-      institution: "University Name",
-      year: "2021 - Present",
-      description: "Specializing in Web Technologies and Data Science"
+      institution: "Shri Ram Institute of Technology",
+      year: "2024 - 2026",
+      description: "Focused on Data Structures, Advanced Programming, and Software Development."
     },
     {
       degree: "Bachelor of Computer Applications (BCA)",
-      institution: "Previous University",
-      year: "2018 - 2021",
-      description: "Graduated with distinction, focused on programming fundamentals"
+      institution: "St. Aloysius College (Autonomous) Jabalpur",
+      year: "2021 - 2024",
+      description: "Studied Programming, Machine Learning, and Web Development."
     }
   ];
-
+  
   const categories = [
     {
       name: "Frontend Development",
