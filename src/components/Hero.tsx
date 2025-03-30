@@ -14,7 +14,7 @@ const Hero = () => {
           <div className="flex flex-col items-center text-center md:text-left md:items-start md:w-1/2">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
               <span>Hi, I'm </span>
-              <span className="text-gradient">John Doe</span>
+              <span className="text-gradient">Gyanesh Vishwakarma</span>
             </h1>
             <h2 className="text-2xl md:text-3xl font-medium mb-6 text-muted-foreground animate-fade-in [animation-delay:200ms]">
               MCA Student & Web Developer

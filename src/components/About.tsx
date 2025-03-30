@@ -1,6 +1,6 @@
 
 import { Code, BookOpen, Database, Brain } from 'lucide-react';
-import { Progress } from './ui/progress';
+import { Slider } from './ui/slider';
 
 const About = () => {
   const educationDetails = [
@@ -161,25 +161,35 @@ const About = () => {
           </div>
         </div>
         
-        {/* Skills with Progress Bars */}
+        {/* Skills with Sliding Bars */}
         <div>
           <h3 className="text-2xl font-semibold mb-8 text-center">Technical Proficiency</h3>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-10 max-w-4xl mx-auto">
             {skills.map((skill, index) => (
               <div 
                 key={index} 
-                className="animate-fade-in"
+                className="animate-fade-in glass-card p-6 rounded-xl hover:shadow-lg transition-all"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
-                <div className="flex justify-between mb-1">
-                  <span className="font-medium">{skill.name}</span>
-                  <span className="text-muted-foreground">{skill.proficiency}%</span>
+                <div className="flex justify-between mb-3">
+                  <span className="font-bold text-lg">{skill.name}</span>
+                  <span className="text-accent font-bold">{skill.proficiency}%</span>
                 </div>
-                <Progress 
-                  value={skill.proficiency} 
-                  className="h-2.5 bg-secondary/50 overflow-hidden" 
-                />
+                <div className="relative">
+                  <Slider
+                    value={[skill.proficiency]}
+                    max={100}
+                    step={1}
+                    disabled
+                    className="cursor-default h-3"
+                  />
+                  <span 
+                    className="absolute -right-1 -top-1 h-5 w-5 bg-accent rounded-full shadow-lg border-2 border-background"
+                    style={{ right: `${100 - skill.proficiency}%` }}
+                  />
+                </div>
+                <div className="mt-2 text-right text-xs text-muted-foreground">{skill.category}</div>
               </div>
             ))}
           </div>
